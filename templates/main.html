@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="card-wrapper">
+		<form class="formFileLg" method="post" enctype="multipart/form-data">
+			<label for="doc1">Document 1</label>
+			<input class="form-control form-control-lg" id="doc1" name="doc1" type="file" />
+			<label  for="doc2">Document 2</label>
+			<input class="form-control form-control-lg" id="doc2" name="doc2" type="file" />
+			<button class="btn btn-primary" type="submit">Upload</button>
+		</form>	
+	</div>
+
+	<div class="card-wrapper">
+        
+		<div class="card">
+			<h1 class="center">Plagiarism Detection</h1>
+			<p class="center ab"><em>Jaccard similarity</em>: <strong>{{list[0]}}</strong></p>
+			<p class="center ab"><em>Similarity using TF-IDF</em>: <strong>{{list[1]}} {% if list %}%{% endif %}</strong></p>
+		</div>
+	</div>
+
+	<div class="card-wrapper">
+        <div>
+            <a href="/plagcheck/" class="btn">Check for plagiarism</a>
+        </div>
+	</div>
+
+{% endblock %}
